@@ -1,11 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-let name = <p>Harry Potter Clock</p>
+function Cartoon(props){
+	return <h1>Hello, {props.name} on {props.show}</h1>
+}
 
+function Show(){
+	return <div>
+				<Cartoon name="Anna" show="Frozzen 1"/>
+				<Cartoon name="Elsa" show="Frozzen 2"/>
+		   </div>
+}
 setInterval(function(){
 	ReactDOM.render(
-		<h2>{name} The Current Time is - {new Date().toLocaleTimeString()}</h2>,
+		<Show/>,
 	  document.getElementById('root')
 	);	
 }, 1200);
